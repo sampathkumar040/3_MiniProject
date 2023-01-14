@@ -1,0 +1,17 @@
+Hi ${FNAME} ${LNAME} , <br/>
+<br/>
+
+Welcome to AshokIt your registration is completed<br/>
+<br/>
+
+please unlock your account using below link <br/>
+<br/>
+
+Temporary password= ${TEMP_PWD} <br/>
+<br/>
+<a href="http://8080/unlock">Click here to unlockAccount by postman
+<a href="http://4200/unloak?email=${EMAIL}">Clicl here to unlock Acc <br/>
+<br/>
+
+Thank you<br/>
+Sampath
