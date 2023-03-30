@@ -8,9 +8,9 @@ import com.example.entity.User;
 
 public interface UserRepository extends JpaRepository<User, Serializable>{
 	//select * from user_master where email=? 
-	public User findByEmail(String email);
+	public User findByUserEmail(String userEmail);
 	
 	//select * from user_master where email-? and user_pwd=?
-	public User findByEmailAndUserPwd(String email, String pwd);
+	public User findByUserEmailAndUserPwd(String userEmail, String userPwd);
 
 }

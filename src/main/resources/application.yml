@@ -1,9 +1,12 @@
+server:
+  port: 9191
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mydb
     username: root
-    password: sampath040
+    password: root
   jpa:
     show-sql: true
     hibernate:     
@@ -27,6 +30,11 @@ spring:
            auth: true
            starttls:
              enable: true
+             
+reg-app: 
+  messages:
+    regMailSubject: User Registration Success
+    regMailBodyTemplateFile: REG_EMAIL_BODY.txt
              
              
              

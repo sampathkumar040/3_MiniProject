@@ -8,7 +8,7 @@ import com.example.binding.UserForm;
 
 public interface UserMngtService {
 	
-	public String checkEmail(String email);
+	public boolean checkEmail(String email);
 	
 	public Map<Integer, String> getCountries();
 	
@@ -16,13 +16,13 @@ public interface UserMngtService {
 	
 	public Map<Integer, String> getCities(Integer stateId);
 	
-	public String registerUser(UserForm userForm);
+	public boolean registerUser(UserForm userForm);
 	
 	public String unlockAccount(UnlockAccountForm accForm);
 	
 	public String login(LoginForm loginform);
 	
-	public String forgotPassword(String email);
+	//public String forgotPassword(String email);
 	
 	
 

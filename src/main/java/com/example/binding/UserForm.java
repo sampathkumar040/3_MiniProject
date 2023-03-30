@@ -7,14 +7,19 @@ import lombok.Data;
 @Data
 public class UserForm {
 	
-	private String fname;
-	private String lname;
-	private String email;
-	private Long phno;
-	private LocalDate dob;
-	private String gender;
-	private Integer countryId;
-	private Integer stateId;
-	private Integer cityId;
 
+	private Integer userId;
+	private String userFname;
+	private String userLname;
+	private String userEmail;
+	private Integer userPhno;
+	private LocalDate userDob;
+	private String userGender;
+	private Integer userCountry;
+	private Integer userState;
+	private Integer userCity;
+	private String userPwd;
+	private String userAccStatus;
+	private LocalDate createdDate;
+	private LocalDate updatedDate;
 }

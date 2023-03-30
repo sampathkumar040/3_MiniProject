@@ -1,29 +1,35 @@
 package com.example.util;
 import javax.mail.internet.MimeMessage;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
+
+import com.example.exception.RegAppException;
 @Component
+@Configuration
 public class EmailUtils {
-	@org.springframework.beans.factory.annotation.Autowired(required=true)
+	@Autowired
 	private JavaMailSender mailSender;
 
 	public boolean sendMail(String to,String subject,String body) {
 		boolean isSent=false;
-
+		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		try{
-			MimeMessage mimeMessage = mailSender.createMimeMessage();
+		
 			MimeMessageHelper messageHelper=new MimeMessageHelper(mimeMessage);
 			messageHelper.setTo(to);
 			messageHelper.setSubject(subject);
 			messageHelper.setText(body,true);
 
-			mailSender.send(mimeMessage);
+			mailSender.send(messageHelper.getMimeMessage());
+			
 			isSent=true;
 
 		}catch (Exception e) {
-			e.printStackTrace();
+			throw new RegAppException();
 		}
 		return isSent;
 
